@@ -1,0 +1,27 @@
+label{
+    background-color: pink;
+    border: solid;
+}
+.div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.container{
+  
+}
+img{
+  /* height: 400px; */
+  width: 700px;
+  
+}
+
+//////////////////////////
+
+.mainDiv{
+  display: flex;
+  height: 400px;
+  width: 400px;
+}

@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./app.css";
+import { Home } from "./components/Home";
 import Navbar from "./components/Navbar";
 import NewPost from "./components/NewPost";
+import {WebcamCapture} from "./components/Image"
+import FaceImage from "./components/Face";
 
 function App() {
+ 
   const [file, setFile] = useState();
   const [image, setImage] = useState();
 
@@ -22,10 +26,10 @@ function App() {
 
     file && getImage();
   }, [file]);
-
+ 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar />
       {image ? (
         <NewPost image={image} />
       ) : (
@@ -69,7 +73,21 @@ function App() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
+      <h1 style={{textAlign:"center",margin:"10px"}}>Face Recognition system</h1>
+
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"20px"}}>
+        <label 
+         htmlFor="file"> 
+        Upload Here
+        </label>
+        <input 
+        onChange={(e)=>setFile(e.target.files[0])}
+         style={{display:"none"}} id="file" type="file" />
+    </div>
+      {/* <Home image={image} /> */}
+ <WebcamCapture />
+ {/* <FaceImage /> */}
     </div>
   );
 }
